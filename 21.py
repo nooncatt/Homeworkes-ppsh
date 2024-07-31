@@ -4,25 +4,25 @@
 
 # Task 2
 # Используя парадигму функционального программирования
-# принимает список чисел и возвращает сумму всех четных чисел в списке
 def sum_even_numbers(numbers):
-    List_of_even_numbers = [x for x in numbers if x%2==0]
+    List_of_even_numbers = [x for x in numbers if x % 2 == 0]
     return sum(List_of_even_numbers)
+
 
 numbers = [14, 93, 19, 38, 18, 51, 77]
 print(sum_even_numbers(numbers))
 
 
 # Task 3
-# Используя парадигму императивного программирования, напишите функцию
-# sum_even_numbers(numbers), которая принимает список чисел и возвращает
-# сумму всех четных чисел в списке. В ответ укажите результат функции при
-numbers = [60, 84, 9, 49, 7, 85, 38]
+# Используя парадигму императивного программирования
+
 def sum_even_numbers(numbers):
     s = 0
     for numb in numbers:
-        if numb % 2 ==0:
-            s+=numb
+        if numb % 2 == 0:
+            s += numb
     return s
 
+
+numbers = [60, 84, 9, 49, 7, 85, 38]
 print(sum_even_numbers(numbers))
