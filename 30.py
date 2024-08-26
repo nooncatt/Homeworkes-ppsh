@@ -134,6 +134,17 @@ if (d1 > d2):
 
 
 # Task 9
+*** py_version ***
+from sys import version_info
+def get_python_version():
+  """Возвращает текущую версию Python в формате 'Python major.minor.micro'."""
+  return f"Python {version_info.major}.{version_info.minor}.{version_info.micro}"
+
+if __name__ == "__main__":
+  print(get_python_version())
+
+
+*** main ***
 sys.path.append('C:\\Users\\User\\Desktop\\work\\python education\\ППШ\\MyModules')
 from MyModules import py_version
 print(py_version.get_python_version())
@@ -143,6 +154,27 @@ print(py_version.get_python_version())
 
 
 # Task 10
+*** calculator ***
+def add(a, b):  # сложение
+    return a + b
+
+
+def subtract(a, b):  # вычитание
+    return a - b
+
+
+def multiply(a, b):  # умножение
+    return a * b
+
+
+def divide(a, b): # деление
+    if b == 0:
+        raise ZeroDivisionError('Cfn not division on zero')
+    else:
+        return a / b
+
+
+*** main ***
 from MyModules.calculator import *
 
 def calc(a,b):
@@ -162,8 +194,22 @@ print(calc(5.8, 6))
 
 
 # Task 11
+*** imp_modules *** 
+
+import importlib
+def imp_modules(mods):
+    for mod in mods:
+        try:
+            module = importlib.import_module(mod)
+            print(f"Успешно импортирован модуль: {module.__name__}")
+        except ImportError:
+            print(f"Не удалось импортировать модуль: {mod}")
 from MyModules.imp_modules import imp_modules
 modules_to_import = ['math', 'random']
+
+
+*** main ***
+
 imp_modules(modules_to_import)
 print(math.factorial(random.randint(1,10)))
 
@@ -171,6 +217,33 @@ print(math.factorial(random.randint(1,10)))
 
 
 # Task 12
+*** geometry ***
+from math import pi, sqrt
+
+
+def circle(r=5):
+    s = pi * r ** 2
+    l = 2 * pi * r
+    return f'Площадь окружности {s} и длина окружности {l}'
+
+
+def triangle(a=7, b=2, c=8):
+    if a+b > c and a+c>b and b+c>a:
+        P = a + b + c
+        p = P/2
+        S = sqrt(p * (p - a) * (p - b) * (p - c))
+        return f'Площадь треугольника {S} и периметр треугольника {P}'
+    else:
+        raise ValueError('Треугольника с такими сторонами не существует')
+
+def square(a = 15):
+    S = a**2
+    P=a*4
+    return f'Площадь квадрата {S} и периметр квадрата {P}'
+
+
+*** main ***
+
 from MyModules import geometry
 print(geometry.circle())
 print(geometry.triangle())
