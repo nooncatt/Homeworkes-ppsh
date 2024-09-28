@@ -52,3 +52,77 @@ def delete_tasks(id):
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002, host='0.0.0.0')
+
+
+
+# Пользуемся API:
+# import requests
+
+
+# try:
+#     payload = {
+#         "title": "Покормить кота",
+#         "description": "Надо купить ему Whiskas или Purina, а то будет опять злой"
+#     }
+
+#     r = requests.post('http://192.168.0.103:5002/tasks', json=payload)
+#     data = r.json()
+#     print(data)
+# except requests.exceptions.RequestException as error:
+#     print(f'Возникла ошибка {error}')
+
+
+
+
+# try:
+#     payload = {
+#         "description": "Или она выгуляет меня?",
+#         "title": "Выгулять собаку"
+#     }
+#     r = requests.post('http://192.168.0.103:5002/tasks', json=payload)
+#     data = r.json()
+#     print(data)
+# except requests.exceptions.RequestException as error:
+#     print(f'Возникла ошибка {error}')
+
+
+
+
+
+# try:
+#     payload = {
+#         "description": "Ведь они такие крутышки",
+#         "title": "Погладить капибару"
+#     }
+#     r = requests.post('http://192.168.0.103:5002/tasks', json=payload)
+#     data = r.json()
+#     print(data)
+# except requests.exceptions.RequestException as error:
+#     print(f'Возникла ошибка {error}')
+
+
+
+
+# try:
+#     r = requests.get('http://192.168.0.103:5002/tasks')
+#     data = r.json()
+#     print(data)
+# except requests.exceptions.RequestException as error:
+#     print(f'Возникла ошибка {error}')
+
+
+
+
+# url = f'http://192.168.0.103:5002/tasks?id=1'
+# try:
+#     response = requests.delete(url)
+#     if response.status_code == 200:
+#         data = response.json()
+#         print(f"Задача 1 успешно удалена: {data}")
+#     elif response.status_code == 404:
+#         print(f"Задача с ID 1 не найдена.")
+#     else:
+#         print(f"Ошибка: статус-код {response.status_code}, ответ: {response.text}")
+
+# except requests.exceptions.RequestException as e:
+#     print(f"Возникла ошибка при отправке запроса: {e}")
