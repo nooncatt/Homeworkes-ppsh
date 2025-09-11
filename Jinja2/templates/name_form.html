@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        {% if name %}
+        <h1>Привет, {{name}}!</h1>
+        {% else %}
+        <h1>Как тебя зовут?</h1>
+        <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}
+        {{ form.name }} <br/>
+        {{ form.submit }}
+        </form>
+        {% endif %}
+    </body>
+{% endblock %}

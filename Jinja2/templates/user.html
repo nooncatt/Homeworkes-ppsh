@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+    <h1>Hello, {{name | reverse}}!</h1>
+        <p>This is an example paragraph. Anything in the <strong>body</strong> will be bold</p>
+        The list of clothes</br>
+        <ul>
+            {% for item in clothes %}
+            <li>
+                {{item}}
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+{% endblock %}
